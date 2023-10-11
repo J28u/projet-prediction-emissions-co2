@@ -1,5 +1,5 @@
 # OC/DS Projet 4 : Anticipez les besoins en consommation de bâtiments
-Formation OpenClassrooms - Parcours data scientist - Projet Professionnalisant (Décembre 2022-Février 2023)
+Formation OpenClassrooms - Parcours data scientist - Projet Professionnalisant (Décembre 2022 - Février 2023)
 
 ## Secteur : 
 Énergie
@@ -7,7 +7,7 @@ Formation OpenClassrooms - Parcours data scientist - Projet Professionnalisant (
 ## Technologies utilisées : 
  * Jupyter Notebook,
  * Python
- * librairies spécifiques : HyperOpt, SHAP
+ * librairies spécifiques : HyperOpt, SHAP, scikit-learn
 
 ## Mots-clés :
 régression supervisée, modèles ensemblistes
@@ -22,13 +22,14 @@ Il a donc besoin de monitorer ces deux cibles pour adapter sa stratégie.
 Proposer deux modèles de prédiction : l’un permettant de prédire la consommation totale d’énergie des bâtiments non destinés à l’habitation, l’autre leurs émissions de CO2. 
 
 ## Algorithme retenu : 
-GBoost
+XGBoost
 
 ## Livrables :
-* notebook_analyse.ipynb : notebook du nettoyage et de l'analyse exploratoire
-* notebook_co2.ipynb : notebook des différents tests de modèles pour prédire les émissions de CO2
-* notebook_conso.ipynb : notebook des différents tests de modèles pour prédire la consommation totale d’énergie
-* presentation.pdf : Un support de présentation pour la soutenance.
+* notebook_exploratoire.ipynb : notebook du nettoyage et de l'analyse exploratoire
+* notebook_prediction_conso.ipynb : notebook des différents tests de modèles pour prédire la consommation totale d’énergie
+* notebook_prediction_co2.ipynb : notebook des différents tests de modèles pour prédire les émissions de CO2
+* toolbox.py : fonctions utilisées dans les notebooks
+* presentation.pdf : support de présentation pour la soutenance.
 
 ## Méthodologie suivie : 
 1. Nettoyage des données :
@@ -46,7 +47,7 @@ GBoost
 * entraînement d’un modèle naïf 
 * test de plusieurs modèles :
 	- linéaires : régression linéaire, lasso, regression ridge, elastic net, svm
-	- à noyau :
+	- à noyau : régression ridge à noyau, svm à noyau
 	- ensemblistes : Gboost, XGBoost, CatBoost, Bagging, Forêt aléatoire, Adaboost
 * analyse de l’impact de chaque variable sur le modèle (librairie SHAP)
 
@@ -54,7 +55,7 @@ On recommence les étapes 2 et 3 (traitement des données et modélisation) pour
 Une fois satisfait du choix des variables d’entrées, on passe à l’étape 4.
 
 4. Optimisation :
-* choix des meilleurs modèles : temps d’entraînement, MAE,  R2
+* choix des meilleurs modèles : temps d’entraînement, MAE,  R2, RMSE
 * optimisation des hyperparamètres des meilleurs modèles (librairie HyperOpt)
 * choix du meilleur modèle après optimisation
 
